@@ -1,0 +1,46 @@
+name: Сообщить об ошибке
+description: Ошибка установки, обработки Word, Excel или PDF
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "**Не размещайте настоящие документы лаборатории, персональные данные, заводские номера конкретных приборов, пароли или секреты. Используйте вымышленные примеры.**"
+  - type: input
+    id: version
+    attributes:
+      label: Версия F2URL
+      placeholder: 0.2.5 RC1 Compact
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Где возникает ошибка?
+      options:
+        - Установка или запуск
+        - Гиперссылки Word
+        - Гиперссылки Excel
+        - Скачивание PDF
+        - Интерфейс или справка
+        - Другое
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Как воспроизвести ошибку?
+      description: Указывайте только обезличенные сведения.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Ожидаемый результат
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Фактический результат
+    validations:
+      required: true
