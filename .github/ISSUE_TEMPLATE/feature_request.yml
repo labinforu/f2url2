@@ -1,0 +1,20 @@
+name: Предложить улучшение
+description: Идея для развития F2URL
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: "Спасибо за предложение! Не публикуйте персональные данные или конфиденциальные сведения."
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую задачу необходимо решить?
+      description: Опишите её на примере вымышленных данных.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Как должно работать улучшение?
+    validations:
+      required: true
