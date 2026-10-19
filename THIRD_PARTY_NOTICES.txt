@@ -1,20 +1,33 @@
-СТОРОННИЕ КОМПОНЕНТЫ F2URL 2 — УВЕДОМЛЕНИЯ И ЛИЦЕНЗИИ
+СТОРОННИЕ КОМПОНЕНТЫ И ЛИЦЕНЗИИ F2URL 2
+Редакция для F2URL 0.2.7 RC1 Compact
 
-Список подготовлен для F2URL 0.2.5 RC1 Compact. Перед публичным выпуском точный состав дистрибутива и тексты лицензий должны быть проверены по фактически собранному Setup.
+F2URL — бесплатная программа Lab-Info с закрытым собственным исходным кодом. В составе поставки используются независимые сторонние компоненты, права на которые сохраняются за их авторами. Для каждой библиотеки применяются её собственные лицензионные условия; настоящее уведомление не заменяет тексты соответствующих лицензий.
 
-1. Python — Python Software Foundation License (PSF). https://docs.python.org/3/license.html
-2. PySide6-Essentials, shiboken6 и модули Qt — применимые открытые лицензии, в том числе LGPLv3 (условия могут различаться по модулям). https://doc.qt.io/qtforpython-6/licenses.html
-3. Playwright Python и driver — Apache License 2.0 и дополнительные уведомления. https://github.com/microsoft/playwright-python
-4. Chromium Headless Shell — лицензии проекта Chromium и включённых сторонних библиотек. https://www.chromium.org/chromium-projects/
+КОМПОНЕНТЫ ПРИЛОЖЕНИЯ
+
+1. Python (CPython 3.x) — Python Software Foundation License и связанные уведомления. https://docs.python.org/3/license.html
+2. PySide6-Essentials 6.12.0, Shiboken6 6.12.0 и фактически используемые модули Qt 6.12.0 (Qt Core, Gui, Widgets, QML, Quick и Quick Controls) — открытые лицензии Qt и Qt for Python, в том числе GNU LGPLv3; конкретные условия зависят от модуля и входящих в него сторонних компонентов. https://doc.qt.io/qtforpython-6/licenses.html
+3. Playwright Python 1.64.0 и драйвер Playwright — Apache License 2.0 и дополнительные уведомления включённых компонентов. https://github.com/microsoft/playwright-python и https://github.com/microsoft/playwright
+4. Chromium Headless Shell — лицензия проекта Chromium (BSD 3-Clause) и отдельные лицензии компонентов, включённых в Chromium. Программа применяет Chromium для сохранения веб-страниц в PDF; Microsoft Edge не входит в дистрибутив и не требуется. https://chromium.googlesource.com/chromium/src/+/refs/heads/main/LICENSE
 5. openpyxl — MIT License. https://openpyxl.readthedocs.io/
-6. et-xmlfile — MIT License и сопутствующие уведомления. https://pypi.org/project/et-xmlfile/
-7. lxml — BSD-style License; у включённых libxml2/libxslt есть отдельные лицензионные уведомления. https://lxml.de/
-8. greenlet — MIT/PSF для соответствующей версии. https://pypi.org/project/greenlet/
+6. et-xmlfile 2.0.0 — MIT License; часть заимствованного кода сопровождается уведомлениями Python Software Foundation. https://pypi.org/project/et-xmlfile/
+7. lxml — BSD-подобные условия и отдельные уведомления для включённых libxml2/libxslt и других компонентов. https://lxml.de/
+8. greenlet — MIT License с дополнительными уведомлениями для кода, происходящего из Stackless Python. https://pypi.org/project/greenlet/
 9. pyee — MIT License. https://pypi.org/project/pyee/
-10. PyInstaller — инструмент сборки, применяются GPL с исключением для загрузчика и условия иных компонентов. https://pyinstaller.org/en/stable/license.html
 
-В готовый дистрибутив должны входить актуальные тексты сторонних лицензий. Необходимо отдельно проверить выполнение условий Qt/LGPL, включая права пользователя на замену динамических библиотек, и предоставление уведомлений/исходников применимых свободных компонентов.
+ИНСТРУМЕНТ СБОРКИ
 
-Встроенный Chromium Headless используется для сохранения страниц в PDF; Microsoft Edge не требуется.
+PyInstaller используется для упаковки приложения. Его загрузчик включён в создаваемый исполняемый файл. PyInstaller распространяется под GPLv2 с исключением для загрузчика, которое позволяет распространять полученное приложение под отдельной лицензией без обязательного раскрытия исходного кода F2URL. Условия сторонних компонентов приложения при этом сохраняются. https://pyinstaller.org/en/v6.22.3/license.html
 
-F2URL — независимая разработка Lab-Info. Использование названий сторонних проектов не означает их одобрения программы.
+ГДЕ ПОСМОТРЕТЬ ПОЛНЫЕ ЛИЦЕНЗИИ
+
+— Раздел F2URL «О программе» → «Лицензии».
+— Каталог legal/third_party/ внутри установленного приложения (в сборке PyInstaller он может находиться в _internal/legal/third_party/).
+— Каталог legal/third_party/bundled/ с текстами из зависимостей, фактически использованных при сборке.
+— В составе каталога Chromium дополнительно могут находиться его собственные файлы LICENSE / LICENSES.chromium.html с уведомлениями об авторах и сторонах лицензирования.
+
+ВАЖНО О GNU LGPLv3
+
+Открытая лицензия Qt может применяться к F2URL без раскрытия собственного исходного кода при выполнении её условий. Пользователи сохраняют предоставленные LGPL права на используемые библиотеки, в том числе на их замену совместимыми модифицированными версиями. Необходимо также обеспечить доступ к соответствующим исходным текстам LGPL-компонентов и сведениям для их использования согласно условиям лицензии. Полный текст GNU LGPLv3 и соответствующий текст GNU GPLv3 включены в комплект.
+
+Все торговые марки принадлежат их владельцам. Упоминание Qt, Python, Microsoft, Google или других проектов не означает их участия в разработке либо одобрения F2URL.
